@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "name": "EXPERIENCE THE GREAT HOLIDAY ON BEACH",
+        "price": "$750",
+        "description": "EXPERIENCE THE GREAT HOLIDAY ON BEACH",
+        "img": "http://demo.stairthemes.com/traveler/wp-content/uploads/sites/2/2022/02/traveler-image8.jpg"
+
+    },
+    {
+        "id":2,
+        "name": "SUMMER HOLIDAY TO THE OXOLOTAN RIVER",
+        "price": "$520",
+        "description": "EXPERIENCE THE GREAT HOLIDAY ON BEACH",
+        "img": "http://demo.stairthemes.com/traveler/wp-content/uploads/sites/2/2022/02/traveler-image10.jpg"
+
+    },
+    {
+        "id":3,
+        "name": "SANTORINI ISLAND'S WEEKEND VACATION",
+        "price": "$660",
+        "description": "EXPERIENCE THE GREAT HOLIDAY ON BEACH",
+        "img": "http://demo.stairthemes.com/traveler/wp-content/uploads/sites/2/2022/02/traveler-image9.jpg"
+
+    }
+]
