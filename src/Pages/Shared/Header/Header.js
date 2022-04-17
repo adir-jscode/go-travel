@@ -29,7 +29,7 @@ const Header = () => {
             }
       
               <div className="text-white fw-bold text-center d-flex align-items-center">
-                {user?.displayName && user.displayName}
+                {user?.email && user.email}
               </div>
               
         
