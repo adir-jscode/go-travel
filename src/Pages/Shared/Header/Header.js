@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <Navbar className="bg-info fixed-top" variant="dark">
+        <Navbar sticky="top" className="bg-info" variant="dark">
     <Container>
-    <Navbar.Brand href="#home">Go-Travel</Navbar.Brand>
+    <Navbar.Brand as={Link} to="/">Go-Travel</Navbar.Brand>
     <Nav>
-                    <Nav.Link  className="text-white fw-bold" to="/home">Home</Nav.Link>
-                    <Nav.Link  className="text-white fw-bold"to="/about">About</Nav.Link>
-                    <Nav.Link  className="text-white fw-bold"to="/blogs">Blogs</Nav.Link>
-                    <Nav.Link  className="text-white fw-bold"to="/login">Login</Nav.Link>
+                    <Nav.Link  className="text-white fw-bold" as={Link} to="home">Home</Nav.Link>
+                    <Nav.Link  className="text-white fw-bold" as={Link} to="about">About</Nav.Link>
+                    <Nav.Link  className="text-white fw-bold" as={Link}to="blogs">Blogs</Nav.Link>
+                    <Nav.Link  className="text-white fw-bold" href="home#services">Services</Nav.Link>
+                    <Nav.Link  className="text-white fw-bold" as={Link} to="login">Login</Nav.Link>
       
     </Nav>
     </Container>

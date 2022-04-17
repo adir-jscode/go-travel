@@ -1,46 +1,33 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { Button, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './Login.css'
 const Login = () => {
+  const emailRef = useRef('');
+  const passwordRef = useRef('');
+  const navigate = useNavigate();
+
+  const handleRegistration = () => {
+    navigate("/register");
+  }
     return (
-       <div className='auth-form-container '>
-      <div className='auth-form'>
-        <h1>Login</h1>
-        <form >
-          <div className='input-field'>
-            <label htmlFor='email'>Email</label>
-            <div className='input-wrapper'>
-              <input type='text' name='email' id='email' />
-            </div>
-          </div>
-          <div className='input-field'>
-            <label htmlFor='password'>Password</label>
-            <div className='input-wrapper'>
-              <input
-                type='password'
-                name='password'
-                id='password'
-              />
-            </div>
-          </div>
-          <button type='submit' className='auth-form-submit btn btn-info text-white px-4 w-100 p-4 fw-bold'>
-            Login
-          </button>
-        </form>
-        <p className='redirect'>
-          New to Tech Geeks?{" "}
-        </p>
-        <div className='horizontal-divider'>
-          <div className='line-left' />
-          <p>or</p>
-          <div className='line-right' />
-        </div>
-        {/* <div className='input-wrapper'>
-          <button className='google-auth' onClick={googleAuth}>
-            <img src={GoogleLogo} alt='' />
-            <p> Continue with Google </p>
-          </button>
-        </div> */}
-      </div>
+      <div className="container w-50 mx-auto mt-5">
+        <h1 className="text-info text-center">Login</h1>
+      <Form>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control ref={passwordRef} type="password" placeholder="Password" />
+  </Form.Group>
+  <Button variant="primary" type="submit">
+    Submit
+          </Button>
+          <p onClick={handleRegistration} className="text-center">New to Go Travel? <span className="text-info">Create a new account</span> </p>
+</Form>
     </div>
   );
 };
