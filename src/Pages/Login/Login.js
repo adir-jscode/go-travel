@@ -10,10 +10,17 @@ const Login = () => {
   const handleRegistration = () => {
     navigate("/register");
   }
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    console.log(email, password);
+  }
     return (
       <div className="container w-50 mx-auto mt-5">
         <h1 className="text-info text-center">Login</h1>
-      <Form>
+      <Form onSubmit={handleLogin}>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
     <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
@@ -24,7 +31,7 @@ const Login = () => {
     <Form.Control ref={passwordRef} type="password" placeholder="Password" />
   </Form.Group>
   <Button variant="primary" type="submit">
-    Submit
+    Login
           </Button>
           <p onClick={handleRegistration} className="text-center">New to Go Travel? <span className="text-info">Create a new account</span> </p>
 </Form>
