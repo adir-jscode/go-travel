@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
-import {useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import './Login.css';
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -16,6 +16,11 @@ const Login = () => {
   loading,
   error,
   ] = useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+  let showError;
+  if (error) {
+    showError = error?.message;
+  }
   
   let from = location.state?.from?.pathname || "/";
   const handleRegistration = () => {
@@ -33,6 +38,11 @@ const Login = () => {
     console.log(user.email)
      navigate(from, { replace: true });
   }
+  const handleRestPassword = async () => {
+     const email = emailRef.current.value;
+    await sendPasswordResetEmail(email);
+          alert('Sent email');
+  }
     return (
       <div className="container w-50 mx-auto mt-5">
         <h1 className="text-info text-center">Login</h1>
@@ -49,7 +59,12 @@ const Login = () => {
   <Button variant="primary" type="submit">
     Login
           </Button>
+          <div className="text-danger">
+               {showError}
+          </div>
+         
           <p onClick={handleRegistration} className="text-center">New to Go Travel? <span className="text-info">Create a new account</span> </p>
+          <p onClick={handleRestPassword} className="text-center"><span className="text-info">Reset Password</span> </p>
         </Form>
         <SocialLogin></SocialLogin>
     </div>

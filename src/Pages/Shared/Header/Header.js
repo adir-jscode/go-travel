@@ -27,9 +27,12 @@ const Header = () => {
               :              
               <Nav.Link className="text-white fw-bold" as={Link} to="login">Login</Nav.Link>
             }
-            {
-              user?.name && user.name
-            }
+      
+              <div className="text-white fw-bold text-center d-flex align-items-center">
+                {user?.displayName && user.displayName}
+              </div>
+              
+        
       
     </Nav>
     </Container>

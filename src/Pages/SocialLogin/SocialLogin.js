@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const navigate = useNavigate();
     let showError;
     if (error) {
         showError = <div>
         <p className="text-danger">{error.message}</p>
       </div>
-  }
+    }
+    if (user) {
+        navigate("/home");
+    }
     return (
         <div>
             <div className="mt-5 d-flex align-items-center">
