@@ -1,26 +1,26 @@
 [
     {
         "id":1,
-        "name": "EXPERIENCE THE GREAT HOLIDAY ON BEACH",
-        "price": "$750",
-        "description": "EXPERIENCE THE GREAT HOLIDAY ON BEACH",
-        "img": "http://demo.stairthemes.com/traveler/wp-content/uploads/sites/2/2022/02/traveler-image8.jpg"
+        "name": "Osaka",
+        "price": "$2750",
+        "description": "Bustling and energetic, Osaka is a thriving metropolis with a distinct commercial culture and with a regional identity that sets it apart from elsewhere in Japan.",
+        "img": "https://www.worldtravelguide.net/wp-content/uploads/2017/04/Think-Japan-Osaka-512059716-javarman3-copy-400x229.jpg"
 
     },
     {
         "id":2,
-        "name": "SUMMER HOLIDAY TO THE OXOLOTAN RIVER",
-        "price": "$520",
-        "description": "EXPERIENCE THE GREAT HOLIDAY ON BEACH",
-        "img": "http://demo.stairthemes.com/traveler/wp-content/uploads/sites/2/2022/02/traveler-image10.jpg"
+        "name": "Paris",
+        "price": "$5520",
+        "description": "Paris rarely disappoints. Home to beautiful architecture, arresting art and the world’s finest restaurants, only the hard–hearted will leave the City of Light without falling in love.",
+        "img": "https://www.worldtravelguide.net/wp-content/uploads/2017/04/Think-France-Paris-521531034-encrier-copy-400x229.jpg"
 
     },
     {
         "id":3,
-        "name": "SANTORINI ISLAND'S WEEKEND VACATION",
-        "price": "$660",
-        "description": "EXPERIENCE THE GREAT HOLIDAY ON BEACH",
-        "img": "http://demo.stairthemes.com/traveler/wp-content/uploads/sites/2/2022/02/traveler-image9.jpg"
+        "name": "Eilat",
+        "price": "$6560",
+        "description": "Sandwiched between the Red Sea and the mighty Negev desert, Eilat is a water sport and desert adventure paradise.",
+        "img": "https://www.worldtravelguide.net/wp-content/uploads/2019/02/shu-Israel-Eilat-aerial-view-1005910207-1440x823-400x229.jpg"
 
     }
 ]

@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import {useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import './Login.css';
 import auth from '../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 const Login = () => {
   const emailRef = useRef('');
   const passwordRef = useRef('');
@@ -14,7 +15,8 @@ const Login = () => {
   user,
   loading,
   error,
-] = useSignInWithEmailAndPassword(auth);
+  ] = useSignInWithEmailAndPassword(auth);
+  
   let from = location.state?.from?.pathname || "/";
   const handleRegistration = () => {
     navigate("/register");
@@ -48,7 +50,8 @@ const Login = () => {
     Login
           </Button>
           <p onClick={handleRegistration} className="text-center">New to Go Travel? <span className="text-info">Create a new account</span> </p>
-</Form>
+        </Form>
+        <SocialLogin></SocialLogin>
     </div>
   );
 };
