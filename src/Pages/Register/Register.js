@@ -1,9 +1,8 @@
 
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
   import 'react-toastify/dist/ReactToastify.css';
@@ -65,7 +64,7 @@ const Register = () => {
                 <p onClick={handleLogin} className="text-center">Already have an account? <button className="text-info btn btn-link text-decoration-none">Please Login</button> </p>
             </Form>
             <SocialLogin></SocialLogin>
-            <ToastContainer />
+    
             
 
         </div>

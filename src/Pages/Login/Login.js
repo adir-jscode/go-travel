@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import {useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import './Login.css';
 import auth from '../../firebase.init';
@@ -8,7 +8,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
  import { ToastContainer, toast } from 'react-toastify';
 
   import 'react-toastify/dist/ReactToastify.css';
-import Spinner from '../../Loading/Loading';
+
 const Login = () => {
   const emailRef = useRef('');
   const passwordRef = useRef('');
@@ -17,8 +17,7 @@ const Login = () => {
   const [
   signInWithEmailAndPassword,
   user,
-  loading,
-  error,
+  error
   ] = useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   let showError;

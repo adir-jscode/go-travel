@@ -4,6 +4,7 @@
 
 # About Project
 
+- This project is about independent service provider
 - It's contains packages of traveling guide
 - Service contains 3 different type of packages
 - Home page contains a Banner,Services and a footer
