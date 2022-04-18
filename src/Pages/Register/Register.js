@@ -37,7 +37,9 @@ const Register = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         createUserWithEmailAndPassword(email, password);
-        
+        if (!email) {
+            alert('Please enter a valid email');
+        }
         console.log(name, email, password);
     }
     return (

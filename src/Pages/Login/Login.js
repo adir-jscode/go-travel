@@ -1,10 +1,13 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import './Login.css';
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+ import { ToastContainer, toast } from 'react-toastify';
+
+  import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const emailRef = useRef('');
   const passwordRef = useRef('');
@@ -39,9 +42,15 @@ const Login = () => {
      navigate(from, { replace: true });
   }
   const handleRestPassword = async () => {
-     const email = emailRef.current.value;
-    await sendPasswordResetEmail(email);
-          alert('Sent email');
+    const email = emailRef.current.value;
+    if (email) {
+      await sendPasswordResetEmail(email);
+          toast('Password reset email sent');
+    }
+    else {
+      toast('Please provide a email address');
+    }
+    
   }
     return (
       <div className="container w-50 mx-auto mt-5">
@@ -63,10 +72,11 @@ const Login = () => {
                {showError}
           </div>
          
-          <p onClick={handleRegistration} className="text-center">New to Go Travel? <span className="text-info">Create a new account</span> </p>
-          <p onClick={handleRestPassword} className="text-center"><span className="text-info">Reset Password</span> </p>
+          <p onClick={handleRegistration} className="text-center">New to Go Travel? <button className="text-info btn btn-link text-decoration-none">Create a new account</button> </p>
+          <p onClick={handleRestPassword} className="text-center"><button className="text-info btn btn-link text-decoration-none">Reset Password</button> </p>
         </Form>
         <SocialLogin></SocialLogin>
+        <ToastContainer />
     </div>
   );
 };
