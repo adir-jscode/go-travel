@@ -8,6 +8,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
  import { ToastContainer, toast } from 'react-toastify';
 
   import 'react-toastify/dist/ReactToastify.css';
+import Spinner from '../../Loading/Loading';
 const Login = () => {
   const emailRef = useRef('');
   const passwordRef = useRef('');
@@ -24,7 +25,6 @@ const Login = () => {
   if (error) {
     showError = error?.message;
   }
-  
   let from = location.state?.from?.pathname || "/";
   const handleRegistration = () => {
     navigate("/register");

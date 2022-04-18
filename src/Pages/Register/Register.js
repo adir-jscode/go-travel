@@ -3,9 +3,10 @@ import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
-
+  import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const nameRef = useRef('');
     const emailRef = useRef('');
@@ -37,9 +38,6 @@ const Register = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         createUserWithEmailAndPassword(email, password);
-        if (!email) {
-            alert('Please enter a valid email');
-        }
         console.log(name, email, password);
     }
     return (
@@ -64,10 +62,10 @@ const Register = () => {
   <Button variant="primary" type="submit">
                     Register
                 </Button>
-                <p onClick={handleLogin} className="text-center">Already have an account? <span className="text-info">Please Login</span> </p>
+                <p onClick={handleLogin} className="text-center">Already have an account? <button className="text-info btn btn-link text-decoration-none">Please Login</button> </p>
             </Form>
             <SocialLogin></SocialLogin>
-            
+            <ToastContainer />
             
 
         </div>
