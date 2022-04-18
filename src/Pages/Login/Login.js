@@ -19,10 +19,13 @@ const Login = () => {
   user,
   error
   ] = useSignInWithEmailAndPassword(auth);
+  console.log(error);
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-  let showError;
+  let displayError;
   if (error) {
-    showError = error?.message;
+   displayError = <div>
+        <p className="text-danger">{error?.message}</p>
+    </div>
   }
   let from = location.state?.from?.pathname || "/";
   const handleRegistration = () => {
@@ -68,7 +71,7 @@ const Login = () => {
     Login
           </Button>
           <div className="text-danger">
-               {showError}
+               {displayError}
           </div>
          
           <p onClick={handleRegistration} className="text-center">New to Go Travel? <button className="text-info btn btn-link text-decoration-none">Create a new account</button> </p>

@@ -8,7 +8,7 @@
 - It's contains packages of traveling guide
 - Service contains 3 different type of packages
 - Home page contains a Banner,Services and a footer
-- This is a independent service provider based project
+- It requires user authentication
 
 # Languages and technologies
 
